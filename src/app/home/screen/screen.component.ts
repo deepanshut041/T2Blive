@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Typed } from 'typed.js';
 
 @Component({
   selector: 'app-screen',
@@ -11,7 +12,10 @@ export class ScreenComponent implements OnInit {
 
   }
   ngOnInit() {
-    
+    let typed = new Typed(".element", {
+      strings: '#typed-strings',
+      smartBackspace: true // Default value
+    });    
 
   }
 }
