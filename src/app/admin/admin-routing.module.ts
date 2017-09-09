@@ -12,6 +12,11 @@ import { ListProductComponent } from "./product/listProduct/listProduct.componen
 import { WorkersComponent } from "./workers/workers.component";
 import { AddWorkersComponent } from "./workers/addWorkers/addWorkers.component";
 import { ListWorkerComponent } from "./workers/listWorker/listWorker.component";
+import { BlogComponent } from "./blog/blog.component";
+import { EditBlogComponent } from "./blog/editBlog/editBlog.component";
+import { NewBlogComponent } from "./blog/newBlog/newBlog.component";
+import { ListingBlogComponent } from "./blog/listingBlog/listingBlog.component";
+
 
 const routes:Routes = [
     {path:"", component:AdminComponent,children:[
@@ -21,6 +26,11 @@ const routes:Routes = [
         {path:"products",component:ProductComponent,children:[
             {path:"list",component:ListProductComponent},
             {path:"add",component:AddProductComponent}
+        ]},
+        {path:"blog",component:BlogComponent,children:[
+            {path:"new",component:NewBlogComponent},
+            {path:"edit/:id",component:EditBlogComponent},
+            {path:"listing",component:ListingBlogComponent}
         ]},
         {path:"workers",component:WorkersComponent,children:[
             {path:"add",component:AddWorkersComponent},

@@ -38,12 +38,22 @@
                     <span>Inventory</span>
                 </a>
             </li>
-            <li class="sub-menu">
-                <a routerLink="./blog" [ngClass]="{'active': status === 'blog'}" (click)="status='blog'">
+            <li class="sub-menu parent-li" >
+                <div (click)="expandSubMenu(blogMenu)">
+                <a  [ngClass]="{'active': status === 'blog'}"(click)="status='blog'">
                     <i class="fa fa-dashboard"></i>
                     <span>Blog</span>
                 </a>
-            </li>
+                </div>
+                <ul class="sub" #blogMenu>
+                    <li>
+                        <a [ngClass]="{'active': status2 === 'add'}"(click)="status2='add'" routerLink="./blog/new">Add Blog</a>
+                    </li>
+                    <li>
+                        <a [ngClass]="{'active': status2 === 'list'}"(click)="status2='list'" routerLink="./blog/listing">List Blogs</a>
+                    </li>
+                </ul>
+            </li> 
             <li class="sub-menu parent-li" >
                 <div (click)="expandSubMenu(productMenu)">
                 <a  [ngClass]="{'active': status === 'products'}"(click)="status='products'">

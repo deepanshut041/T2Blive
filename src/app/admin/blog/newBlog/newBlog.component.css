@@ -1,0 +1,41 @@
+div.row{
+    margin: 20px 8%;
+    background: #fff;
+}
+
+form div.blogTitlePage h2{
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: 800;
+    padding-top: 20px;
+}
+
+form div.imageUploader{
+    width: 100%;
+    display: block;
+    border: 2px dashed #2196f3;
+    padding: 50px;
+    border-radius: 4px;
+    background-color: rgba(33,150,243,0.03);
+}
+
+form div.imageUploader input.file{
+    visibility: hidden;
+    position: absolute;
+}
+
+form div.imageUploader button.browse{
+    width: auto;
+    height: 50px;
+    display: inline-block;
+    background-color: transparent;
+    color: #222222;
+    border: none;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'Poppins',sans-serif;
+    padding: 0;
+}

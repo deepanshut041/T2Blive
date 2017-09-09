@@ -191,9 +191,6 @@ aside #sidebar ul.sidebar-menu li.sub-menu{
 
 article{
     margin-left: 210px;
-    padding-top: 70px;
-}
-
-article section{
-    background: red;
+    padding-top: 75px;
+    background-color: #eeeeee;
 }
