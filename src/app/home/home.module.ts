@@ -12,12 +12,15 @@ import { BlogComponent } from './blog/blog.component';
 import { ScreenComponent } from './screen/screen.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { ListBlogComponent } from "./blog/listBlog/listBlog.component";
+import { DetailBlogComponent } from "./blog/detailBlog/detailBlog.component";
 
 @NgModule({
     imports: [CommonModule, HomeRoutingModule],
     declarations: [
         HomeComponent, StoreComponent, BlogComponent,
-        NavbarComponent, FooterComponent, ScreenComponent
+        NavbarComponent, FooterComponent, ScreenComponent,
+        ListBlogComponent, DetailBlogComponent
     ],
     exports: [
         HomeComponent,
