@@ -10,32 +10,78 @@ form div.blogTitlePage h2{
     padding-top: 20px;
 }
 
-form div.imageUploader{
-    width: 100%;
-    display: block;
-    border: 2px dashed #2196f3;
-    padding: 50px;
-    border-radius: 4px;
-    background-color: rgba(33,150,243,0.03);
-}
-
-form div.imageUploader input.file{
-    visibility: hidden;
-    position: absolute;
-}
-
-form div.imageUploader button.browse{
-    width: auto;
-    height: 50px;
+.fileupload .thumbnail {
     display: inline-block;
-    background-color: transparent;
-    color: #222222;
-    border: none;
-    box-shadow: none;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-family: 'Poppins',sans-serif;
-    padding: 0;
+    margin-bottom: 5px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.thumbnail {
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.42857;
+    background-color: rgb(255, 255, 255);
+    padding: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-image: initial;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.fileupload .btn {
+    vertical-align: middle;
+}
+.fileupload-new .fileupload-exists {
+    display: none;
+}
+.img-fluid{
+    height: auto;
+}
+.btn-theme02 {
+    color: rgb(255, 255, 255);
+    background-color: rgb(172, 146, 236);
+    border-color: rgb(150, 122, 220);
+}
+.btn-file {
+    position: relative;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    border-radius: 4px;
+}
+
+.btn-file > input {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 23px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translate(-300px, 0px) scale(4);
+    direction: ltr;
+    margin: 0px;
+}
+input[type="file"] {
+    display: block;
 }

@@ -5,6 +5,7 @@ import { AdminRoutingModule } from "./admin-routing.module";
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { AngularFireDatabaseModule } from "angularfire2/database";
 
 // This Module's Components
 import { AdminComponent } from "./admin.component";
@@ -27,7 +28,7 @@ import { AdminService } from "./admin.service";
 import { AuthGuard } from "./auth.service";
 @NgModule({
     imports: [CommonModule,AdminRoutingModule, FormsModule, ReactiveFormsModule,
-        HttpClientModule,AngularFireAuthModule
+        HttpClientModule,AngularFireAuthModule,AngularFireDatabaseModule
     ],
     declarations: [
         AdminComponent, DashboardComponent, InventoryComponent, OrdersComponent,

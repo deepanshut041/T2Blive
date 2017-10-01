@@ -19,15 +19,21 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group col-xs-12">
-                    <div class="imageUploader text-center">
-                        <div class="file-upload">
-                            <div class="upload-area">
-                                <input type="file" name="img[]" class="file">
-                                <button class="browse" type="button">Click or Drag images here</button>
-                            </div>
+                <div class="form-group col-12">
+                    <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
+                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;" id="fileupload-new">
+                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image"  class="img-fluid image" alt="">
+                        </div>
+                        <div>
+                            <span class="btn btn-theme02 btn-file">
+                                <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
+                                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                <input type="file" class="default" (change)="onChange($event)">
+                            </span>
+                            <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
                         </div>
                     </div>
+                              
                 </div>
                 <div class="form-group col-12">
                         <label>Content(you can also write html!!)</label>

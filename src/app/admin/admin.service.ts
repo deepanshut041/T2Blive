@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { Http, Headers } from "@angular/http";
 import { AngularFireAuth } from 'angularfire2/auth';
+import {AngularFireDatabase,FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { Router } from "@angular/router";
 import * as firebase from 'firebase/app';
@@ -14,28 +14,25 @@ export class AdminService {
   admin_name:String;
   admin_email:String;
   admin_uid:String; 
-
+  blogs:FirebaseListObservable<any[]>
 
   user:Observable<firebase.UserInfo>
 
-  constructor(private http:Http,private afAuth: AngularFireAuth, private router:Router) { 
+  constructor(private af:AngularFireDatabase,private afAuth: AngularFireAuth, private router:Router) { 
     this.user = afAuth.authState;
-  }
+    this.blogs = af.list('/blogs');
 
+  }
+  
+  //Blog functions
   addBlog(newBlog){
-    newBlog.post_author = this.author;
-    newBlog.post_authorId = this.authorId;
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/post', newBlog, {headers: headers}).map(res => res.json);
+    return this.blogs.push(newBlog); 
+  }
+  updateBlogImage(id,imgUrl){
+    return this.blogs.update(id,{post_imgurl:imgUrl});
   }
 
-  addBCategory(newCategory){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/api/post/categories', newCategory, {headers: headers}).map(res => res.json);
-  }
-
+  //Authencation functions
   login(email:any, password:any):firebase.Promise<any>{
     return this.afAuth.auth.signInWithEmailAndPassword(email,password)
   }
@@ -43,7 +40,6 @@ export class AdminService {
   logout(){
       this.afAuth.auth.signOut().then((success)=>{
         this.router.navigateByUrl('admin/login');
-      })
-      
+      })  
   }
 }
