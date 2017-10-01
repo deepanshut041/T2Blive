@@ -4,10 +4,10 @@
 			<div class="col-sm-8 col-xs-12" *ngIf="posts">
 				<div class="blogInnerWrapper" *ngFor="let post of posts">
 					<div class="thumbnail blogInner">
-                        <div *ngIf="!post.video">
+                        <div *ngIf="!post.post_video">
                             <img src="{{post.imgUrl}}" alt="Image blog" class="img-responsive">
                         </div>
-						<div class="embed-responsive embed-responsive-16by9" *ngIf="post.video">
+						<div class="embed-responsive embed-responsive-16by9" *ngIf="post.post_video">
                             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jdMXyXuualc"></iframe>
                         </div>
 						<div class="caption">
@@ -41,21 +41,11 @@
 			</div>
 			<div class="col-sm-4 col-xs-12">
 				<div class="sidebarInner">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-addon2">
-						<a href="#" class="input-group-addon" id="basic-addon2"><i class="icon-listy icon-search-2"></i></a>
-					</div>
-				</div>
-				<div class="sidebarInner">
 					<div class="panel panel-default">
 						<div class="panel-heading">Categories</div>
-						<div class="panel-body">
-							<ul class="list-unstyle categoryList">
-								<li><a href="#">Real Estate <span class="pull-right">(3)</span></a></li>
-								<li><a href="#">Automotive <span class="pull-right">(7)</span></a></li>
-								<li><a href="#">Healthcare <span class="pull-right">(12)</span></a></li>
-								<li><a href="#">Restaurent <span class="pull-right">(5)</span></a></li>
-								<li><a href="#">Business <span class="pull-right">(9)</span></a></li>
+						<div class="panel-body" *ngIf="categories">
+							<ul class="list-unstyle categoryList" *ngFor="let category of categories">
+								<li><a href="#">{{category.name}} <span class="pull-right">({{category.count}})</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -63,27 +53,9 @@
 				<div class="sidebarInner">
 					<div class="panel panel-default">
 						<div class="panel-heading">Recent Posts</div>
-						<div class="panel-body">
-							<ul class="list-unstyle categoryList">
-								<li><a href="#">Curabitur scelerisque lacus sit amet.</a></li>
-								<li><a href="#">Morbi pretium ipsum ac massa sollicitu.</a></li>
-								<li><a href="#">Etiam eget augue et lorem sagittis.</a></li>
-								<li><a href="#">Sed mollis tincidunt massa vel egestas.</a></li>
-								<li><a href="#">Aliquam semper dolor nec metus alique.</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="sidebarInner">
-					<div class="panel panel-default">
-						<div class="panel-heading">Archives</div>
-						<div class="panel-body">
-							<ul class="list-unstyle categoryList">
-								<li><a href="#">Jan 2016</a></li>
-								<li><a href="#">Feb 2016</a></li>
-								<li><a href="#">Mar 2016</a></li>
-								<li><a href="#">April 2016</a></li>
-								<li><a href="#">May 2016</a></li>
+						<div class="panel-body" *ngIf="latest">
+							<ul class="list-unstyle categoryList" *ngFor="let item of latest">
+								<li><a href="#">{{item.post_title}}</a></li>
 							</ul>
 						</div>
 					</div>

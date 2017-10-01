@@ -37,4 +37,19 @@ export class NewBlogComponent implements OnInit {
       }
     })
   }
+
+  newCategory(category){
+    let newCategory = {
+      category_name:category
+    }
+
+    this._adminService.addBCategory(newCategory).subscribe((data:any)=>{
+      if(data.success){
+        console.log("Blog Posted SuccessFully");
+      }
+      else{
+        console.log("Failed to post Blog");
+      }
+    })
+  }
 }

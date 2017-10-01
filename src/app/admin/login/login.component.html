@@ -1,0 +1,25 @@
+<div id="login-page">
+    <div class="container">
+    
+        <form class="form-login" (submit)="onSubmit(email.value,password.value)">
+          <h2 class="form-login-heading">sign in now</h2>
+          <div class="login-wrap">
+              <input type="email" class="form-control" placeholder="Email.." autofocus="" #email>
+              <br>
+              <input type="password" class="form-control" placeholder="Password" #password>
+              <br>
+              <br>
+              <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+              <hr>
+              <div class="row" *ngIf="err">
+                <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        {{err}}
+                      </div>
+                </div>
+              </div>
+          </div>
+        </form>	  	
+    
+    </div>
+</div>

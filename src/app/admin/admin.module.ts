@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from "./admin-routing.module";
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AngularFireAuthModule } from "angularfire2/auth";
 
 // This Module's Components
 import { AdminComponent } from "./admin.component";
@@ -21,24 +21,24 @@ import { BlogComponent } from "./blog/blog.component";
 import { EditBlogComponent } from "./blog/editBlog/editBlog.component";
 import { NewBlogComponent } from "./blog/newBlog/newBlog.component";
 import { ListingBlogComponent } from "./blog/listingBlog/listingBlog.component";
-
+import { LoginComponent } from "./login/login.component";
 // This importing service
 import { AdminService } from "./admin.service";
-
+import { AuthGuard } from "./auth.service";
 @NgModule({
     imports: [CommonModule,AdminRoutingModule, FormsModule, ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,AngularFireAuthModule
     ],
     declarations: [
         AdminComponent, DashboardComponent, InventoryComponent, OrdersComponent,
         ProductComponent, AddProductComponent, ListProductComponent,WorkersComponent,
         AddWorkersComponent,ListWorkerComponent, BlogComponent, EditBlogComponent,
-        NewBlogComponent, ListingBlogComponent
+        NewBlogComponent, ListingBlogComponent, LoginComponent
     ],
     exports: [
         AdminComponent,
     ],
-    providers: [AdminService]
+    providers: [AdminService,AuthGuard]
 })
 export class AdminModule {
 
