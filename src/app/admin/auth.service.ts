@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
 
     constructor(private auth: AngularFireAuth, private router: Router,private adminService:AdminService) {}
 
-    canActivate(): Observable<boolean> {
+    /*canActivate(): Observable<boolean> {
       return Observable.from(this.auth.authState)
         .take(1)
         .map(state => !!state)
@@ -20,6 +20,24 @@ export class AuthGuard implements CanActivate {
       if 
         (!authenticated) this.router.navigate([ '/admin/login' ]);
       })
-    }
+    } */
+
+    canActivate(): Observable<boolean>|boolean {
+      return this.auth.authState.map(authState => {
+        if(authState){
+        if (authState.providerData[0].providerId == "password") 
+          {
+            return true;
+        }
+        else{
+          this.router.navigate([ '/admin/login' ])
+          return false;
+        }
+      }
+      else{
+        return false;
+      }
+      }).take(1);
+  }
  
 }

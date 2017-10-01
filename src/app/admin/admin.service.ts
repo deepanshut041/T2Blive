@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
+import { Router } from "@angular/router";
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/map';
 
@@ -17,7 +18,7 @@ export class AdminService {
 
   user:Observable<firebase.UserInfo>
 
-  constructor(private http:Http,private afAuth: AngularFireAuth) { 
+  constructor(private http:Http,private afAuth: AngularFireAuth, private router:Router) { 
     this.user = afAuth.authState;
   }
 
@@ -35,22 +36,14 @@ export class AdminService {
     return this.http.post('http://localhost:3000/api/post/categories', newCategory, {headers: headers}).map(res => res.json);
   }
 
-  login(email:any, password:any){
-    this.afAuth.auth.signInWithEmailAndPassword(email,password).then(
-      (success)=>{
-        this.user = this.afAuth.authState;
-        this.user.subscribe((admin)=>{
-          this.admin_name = admin.displayName;
-          this.admin_uid = admin.providerId;
-          this.admin_email = admin.email;
-        })
-        console.log(success);
-        return true;
-      }).catch(
-        (err) => {
-        console.log(err);
-        return false;
-      })
+  login(email:any, password:any):firebase.Promise<any>{
+    return this.afAuth.auth.signInWithEmailAndPassword(email,password)
   }
 
+  logout(){
+      this.afAuth.auth.signOut().then((success)=>{
+        this.router.navigateByUrl('admin/login');
+      })
+      
+  }
 }

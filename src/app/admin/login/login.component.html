@@ -1,9 +1,9 @@
 <div id="login-page">
     <div class="container">
     
-        <form class="form-login" (submit)="onSubmit(email.value,password.value)">
+        <form class="form-login" (submit)="onSubmit(email.value,password.value)" >
           <h2 class="form-login-heading">sign in now</h2>
-          <div class="login-wrap">
+          <div class="login-wrap" id="form">
               <input type="email" class="form-control" placeholder="Email.." autofocus="" #email>
               <br>
               <input type="password" class="form-control" placeholder="Password" #password>
@@ -20,6 +20,15 @@
               </div>
           </div>
         </form>	  	
-    
+        <div class="text-center spinner" id="spinner">
+            <br>
+            <br>
+            <i class="fa fa-spinner fa-4x fa-spin" aria-hidden="true"></i>
+            <br>
+            <h4>Please Wait!</h4>
+            <br>
+            <br>
+            <br> 
+        </div>
     </div>
 </div>

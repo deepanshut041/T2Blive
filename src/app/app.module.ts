@@ -25,7 +25,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule, HomeModule, AppRoutingModule
-    , FormsModule, HttpModule, AngularFireModule.initializeApp(firebaseConfig,'app-root'),AngularFireDatabaseModule,
+    , FormsModule, HttpModule, AngularFireModule.initializeApp(firebaseConfig),AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

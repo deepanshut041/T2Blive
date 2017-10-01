@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { AdminService } from "./admin.service";
 @Component({
     moduleId: module.id,
     selector: 'admin',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
     styleUrls: ['admin.component.css']
 })
 export class AdminComponent {
+constructor(private _adminSevice:AdminService){}
+
     hideAsideMenu(element:HTMLElement){
         let c=document.getElementById("main-container")
         if(element.style.display == "block"){
@@ -28,5 +30,9 @@ export class AdminComponent {
             element.style.display = "block";
         }
 
+    }
+
+    onLogout(){
+        this._adminSevice.logout();
     }
 }
