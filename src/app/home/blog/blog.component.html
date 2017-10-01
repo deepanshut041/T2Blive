@@ -4,10 +4,10 @@
 			<div class="col-sm-8 col-xs-12" *ngIf="posts">
 				<div class="blogInnerWrapper" *ngFor="let post of posts">
 					<div class="thumbnail blogInner">
-                        <div *ngIf="!post.post_video">
+                        <div *ngIf="post.post_imgUrl">
                             <img src="{{post.imgUrl}}" alt="Image blog" class="img-responsive">
                         </div>
-						<div class="embed-responsive embed-responsive-16by9" *ngIf="post.post_video">
+						<div class="embed-responsive embed-responsive-16by9" *ngIf="post.post_videoUrl">
                             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jdMXyXuualc"></iframe>
                         </div>
 						<div class="caption">

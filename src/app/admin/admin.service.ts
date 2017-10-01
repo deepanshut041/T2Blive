@@ -14,14 +14,15 @@ export class AdminService {
   admin_name:String;
   admin_email:String;
   admin_uid:String; 
-  blogs:FirebaseListObservable<any[]>
+  blogs:FirebaseListObservable<any[]>;
+  bCategory:FirebaseListObservable<any[]>;
 
   user:Observable<firebase.UserInfo>
 
   constructor(private af:AngularFireDatabase,private afAuth: AngularFireAuth, private router:Router) { 
     this.user = afAuth.authState;
     this.blogs = af.list('/blogs');
-
+    this.bCategory = af.list('/bCategory');
   }
   
   //Blog functions
@@ -31,6 +32,14 @@ export class AdminService {
   updateBlogImage(id,imgUrl){
     return this.blogs.update(id,{post_imgurl:imgUrl});
   }
+  addbCategory(category){
+    return this.bCategory.push(category); 
+  }
+  getbCategories(){
+    return this.bCategory as FirebaseListObservable<any[]>;
+}
+
+  
 
   //Authencation functions
   login(email:any, password:any):firebase.Promise<any>{

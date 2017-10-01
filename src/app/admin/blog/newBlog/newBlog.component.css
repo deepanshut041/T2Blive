@@ -2,7 +2,6 @@ div.row{
     margin: 20px 8%;
     background: #fff;
 }
-
 form div.blogTitlePage h2{
     font-size: 30px;
     text-transform: capitalize;
@@ -84,4 +83,10 @@ form div.blogTitlePage h2{
 }
 input[type="file"] {
     display: block;
+}
+.spinner{
+    color: #4ECDC4;
+    background-color: #fff;
+    margin: auto;
+    width: 330px;
 }

@@ -1,39 +1,41 @@
 <div class="row">
     <div class="col-12">
         <form (submit)="newBlog(title.value,
-        content.value
+        content.value,category.value,videoUrl.value
         )">
             <div class="blogTitlePage text-center">
                 <h2>New Blog</h2>
             </div>
-            <div class="row">
-                <div class="form-group col-md-6 col-12">
+            <div class="row" id="blog-form">
+                <div class="form-group col-12">
                     <label for="blogTitle">Blog Title</label>
                     <input type="text" class="form-control" #title>
                 </div>
-                <div class="form-group col-md-6 col-12">
+                <div class="form-group col-12">
                     <label for="blogCategory">Category</label>
                     <div class="categorySelect">
-                        <select  class="form-control" #category) *ngIf="categories">
-                            <option value="{{category.name}}">{{category.name}}</option>
+                        <select  class="form-control" #category)>
+                            <option>Select</option>
+                            <option *ngFor="let category of categories" value="{{category.category_name}}">{{category.category_name}}</option>
                         </select>
                     </div>
                 </div>
-                <div class="form-group col-12">
+                <div class="form-group col-12 col-md-10">
                     <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
-                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;" id="fileupload-new">
-                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image"  class="img-fluid image" alt="">
+                        <div class="fileupload-new thumbnail col-8" id="fileupload-new">
+                            <img src="http://www.placehold.it/600x200/EFEFEF/AAAAAA&amp;text=no+image"  class="img-fluid image" alt="">
                         </div>
                         <div>
                             <span class="btn btn-theme02 btn-file">
                                 <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
-                                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
                                 <input type="file" class="default" (change)="onChange($event)">
                             </span>
-                            <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
                         </div>
-                    </div>
-                              
+                    </div>              
+                </div>
+                <div class="form-group col-12">
+                    <label for="blogTitle">Video Url</label>
+                    <input type="text" class="form-control" #videoUrl id="video">
                 </div>
                 <div class="form-group col-12">
                         <label>Content(you can also write html!!)</label>
@@ -43,12 +45,32 @@
                     <button type="submit" class="btn btn-lg btn-primary">Submit</button>
                 </div>
             </div>
+            <div class="text-center spinner" id="spinner">
+                <br><br>
+                <i class="fa fa-spinner fa-4x fa-spin" aria-hidden="true"></i>
+                <br><h4>Please Wait!</h4>
+                <br><br><br> 
+            </div>
+            <div class="row" *ngIf="successBlog">
+                <div class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        <h4><strong> Success : </strong> {{successBlog}}</h4>
+                      </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="errBlog">
+                <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        {{errBlog}}
+                      </div>
+                </div>
+              </div>
         </form>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
-        <form (submit)="newCategory(category.value)">
+        <form (submit)="newCategory(category.value)"  id="category-form">
             <br>
             <div class="form-group col-12">
                 <label for="blogTitle">Category Name</label>
@@ -57,5 +79,26 @@
             <button type="submit" class="btn btn-lg btn-primary">Submit</button>
             <br>
         </form>
+        <br>
+        <div class="text-center spinner" id="spinnerC">
+            <br><br>
+            <i class="fa fa-spinner fa-4x fa-spin" aria-hidden="true"></i>
+            <br><h4>Please Wait!</h4>
+            <br><br><br> 
+        </div>
+        <div class="row" *ngIf="successC">
+            <div class="col-12">
+                <div class="alert alert-success" role="alert">
+                    <h4><strong> Success : </strong> {{successC}}</h4>
+                    </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="errC">
+            <div class="col-12">
+                <div class="alert alert-danger" role="alert">
+                    {{errC}}
+                    </div>
+            </div>
+            </div>
     </div>
 </div>
