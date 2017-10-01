@@ -15,7 +15,7 @@ export const firebaseConfig = {
   authDomain: "t2b-live.firebaseapp.com",
   databaseURL: "https://t2b-live.firebaseio.com",
   projectId: "t2b-live",
-  storageBucket: "",
+  storageBucket: "t2b-live.appspot.com",
   messagingSenderId: "782395750079"
 };
 

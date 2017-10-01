@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from "@angular/core";
 import { AdminService } from "../../admin.service";
 import { Router } from "@angular/router";
 import { FirebaseApp } from 'angularfire2';
+import * as firebase from 'firebase';
 
 @Component({
   selector: "app-newBlog",
@@ -15,7 +16,7 @@ export class NewBlogComponent implements OnInit {
   admin_id: String;
   image: File;
   imgUrl: String;
-  constructor(private _adminService: AdminService, private router: Router, private firebaseApp: FirebaseApp
+  constructor(private _adminService: AdminService, private router: Router
     , private element: ElementRef) {
 
   }
@@ -48,7 +49,7 @@ export class NewBlogComponent implements OnInit {
 	 }
 	 if(this.image){
 		this._adminService.addBlog(newPost).then((blog) => {
-			var task = this.firebaseApp.storage().ref().child('blog/' + blog.key + "/").put(this.image);
+			var task = firebase.storage().ref().child('blog/' + blog.key + "/").put(this.image);
 			task.then((snapshot) => {
 			  this._adminService.updateBlogImage(blog.key, snapshot.downloadURL).then(() => {
 				 this.router.navigate(["/admin/blog/listing"]);
