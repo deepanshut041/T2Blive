@@ -1,77 +1,23 @@
-<header id="blog-header">
-    <div id="blog-header-text">
-        <p class="text-center">
-            Don't create limitations<br>@Think2Built
-        </p>
-    </div>
-</header>
-
-<div id="blogs-container" class="fluid-container">
-    <div class="container" *ngIf="categories" >
-        <div class="row justify-content-center" >
-            <span class="category-button" *ngFor="let category of categories">{{category.category_name}}</span>
+<div id="posts">
+  <div *ngIf="posts">
+    <div>
+      <section class="row clearfix" id="post-container" *ngFor="let post of posts">
+        <div class="col-md-6 col-12" id="post-container-image">
+          <div class="type">{{post.post_type}}</div>
+          <img src="{{post.post_imgurl}}" class="post-image">
         </div>
-    </div>
-    <div class="row">
-        <article role="main" class="col-lg-8 col-12" id="posts">
-            <div *ngIf="posts">
-                <div >
-                    <section class="row clearfix" id="post-container" *ngFor="let post of posts">
-                        <div class="col-md-6 col-12" id="post-container-image">
-                            <div class="type">{{post.post_type}}</div>
-                            <img src="{{post.post_imgurl}}" class="post-image">
-                        </div>
-                        <div class="col-md-6 col-12" id="post-container-text">
-                            <div class="accessories clearfix" id="post-container-text-header">
-                                <div class="text-block with">With</div>
-                                <div class="text-block">{{post.post_author}}</div>
-                                <div class="catagory text-block">{{post.post_about}}</div>
-                                <div class="before catagory text-block">About</div>
-                                <div class="hr"></div>
-                            </div>
-                            <h1 class="heading">{{post.post_title}}</h1>
-                            <p class="paragraph-2">{{post.post_highlight}}</p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </article>
-        <div class="col-lg-4 col-12" id="rated-posts">
-            <h5 class="text-muted text-center">Top Rated</h5>
-            <hr>
-            <br>
-            <div *ngIf="ratedPosts">
-                <div class="row justify-content-center">
-                    <div class="col-lg-11 col-md-5 col-xs-6 col-11" *ngFor="let ratedPost of ratedPosts" id="rated-post-container">
-                        <div class="row">
-                            <div class="col-6" id="rated-post-image">
-                                <img src="{{ratedPost.post_imgurl}}" class="img-fluid">
-                            </div>
-                            <div class="col-6" id="rated-post-text">
-                                <p>{{ratedPost.post_title}}</p>
-                                <p class="text-muted">{{ratedPost.post_type}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-6 col-12" id="post-container-text">
+          <div class="accessories clearfix" id="post-container-text-header">
+            <div class="text-block with">With</div>
+            <div class="text-block">{{post.post_author}}</div>
+            <div class="catagory text-block">{{post.post_about}}</div>
+            <div class="before catagory text-block">About</div>
+            <div class="hr"></div>
+          </div>
+          <h1 class="heading">{{post.post_title}}</h1>
+          <p class="paragraph-2">{{post.post_highlight}}</p>
         </div>
+      </section>
     </div>
-    <div class="container" id="subscribe">
-        <div class="row">
-        <div class="col-lg-8 col-md-10 col-12" id="subscribe-container">
-            <div id="subscribe-header">
-                <h3 class="col-lg-9 col-md-11 col-12">Subscribe</h3>
-                <p class="col-lg-8 col-md-10 col-12">Subscribe to our beautiful newsletter that is soaking  with inovation stories, latest project tales and more.</p>
-            </div>
-            <div id="subscribe-footer" class="text-center">
-                <input placeholder="Email..">
-                <button>Submit</button>
-                <br>
-                <br>
-            </div>
-        </div>
-        </div>
-    </div>
-    <br><br>
+  </div>
 </div>

@@ -1,3 +1,58 @@
 <div id="main-container" class="container-fluid">
-	<router-outlet></router-outlet>
+	<header id="blog-header">
+    <div id="blog-header-text">
+        <p class="text-center">
+            Don't create limitations<br>@Think2Built
+        </p>
+    </div>
+</header>
+<div id="blogs-container">
+    <div class="container" *ngIf="categories" >
+        <div class="row justify-content-center" >
+            <span class="category-button" *ngFor="let category of categories">{{category.category_name}}</span>
+        </div>
+	</div>
+</div>
+    <div class="row">
+        <article role="main" class="col-lg-8 col-12" id="posts">
+			<router-outlet></router-outlet>
+        </article>
+        <div class="col-lg-4 col-12" id="rated-posts">
+            <h5 class="text-muted text-center">Top Rated</h5>
+            <hr>
+            <br>
+            <div *ngIf="ratedPosts">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11 col-md-5 col-xs-6 col-11" *ngFor="let ratedPost of ratedPosts" id="rated-post-container">
+                        <div class="row">
+                            <div class="col-6" id="rated-post-image">
+                                <img src="{{ratedPost.post_imgurl}}" class="img-fluid">
+                            </div>
+                            <div class="col-6" id="rated-post-text">
+                                <p>{{ratedPost.post_title}}</p>
+                                <p class="text-muted">{{ratedPost.post_type}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="subscribe">
+        <div class="row">
+        <div class="col-lg-8 col-md-10 col-12" id="subscribe-container">
+            <div id="subscribe-header">
+                <h3 class="col-lg-9 col-md-11 col-12">Subscribe</h3>
+                <p class="col-lg-8 col-md-10 col-12">Subscribe to our beautiful newsletter that is soaking  with inovation stories, latest project tales and more.</p>
+            </div>
+            <div id="subscribe-footer" class="text-center">
+                <input placeholder="Email..">
+                <button>Submit</button>
+                <br>
+                <br>
+            </div>
+        </div>
+        </div>
+    </div>
+    <br><br>
 </div>

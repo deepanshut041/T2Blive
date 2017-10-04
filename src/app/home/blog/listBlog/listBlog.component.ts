@@ -13,8 +13,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ListBlogComponent implements OnInit {
   
   posts:any[];
-  ratedPosts:any[];
-  categories:any[];
   
     constructor(private _homeService: HomeService, private router: Router,public sanitizer: DomSanitizer) {
   
@@ -22,10 +20,6 @@ export class ListBlogComponent implements OnInit {
     ngOnInit() {
       this._homeService.getBlogs().subscribe((blogs)=>{
         this.posts = blogs;
-        this.ratedPosts = blogs;
-      });
-      this._homeService.getCategories().subscribe((categories)=>{
-        this.categories = categories;
       });
 
     }
