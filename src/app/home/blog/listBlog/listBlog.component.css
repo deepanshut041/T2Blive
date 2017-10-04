@@ -26,9 +26,11 @@
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     transition: all .5s;
-    width: 755px;
+    width: 700px;
     box-shadow:5px 10px 10px -2px hsla(0, 0%, 70%, .14);
 }
+
+
 @media only screen and (max-width: 768px) {
     #posts #post-container{
         width: 450px;
@@ -141,4 +143,37 @@
     color: #575757;
     font-size: 11px;
     line-height: 18px;
+}
+
+#rated-posts{
+    padding-top:60px;
+}
+
+#rated-posts #rated-post-container{
+    margin: 10px;
+    border: .3px solid #eee;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    box-shadow:1px 2px 2px -2px hsla(0, 0%, 70%, .14);
+}
+
+#rated-posts #rated-post-container:hover{
+    box-shadow:5px 5px 5px -2px hsla(0, 0%, 70%, .14);
+    transform: translateY(-8px)
+}
+
+#rated-posts #rated-post-image{
+    padding: 0px;
+}
+
+#rated-posts #rated-post-image img{
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+#rated-posts #rated-post-text{
+    font-size: 12px;
 }

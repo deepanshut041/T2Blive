@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row">
-        <article role="main" class="col-lg-9 col-12" id="posts">
+        <article role="main" class="col-lg-8 col-12" id="posts">
             <div *ngIf="posts">
                 <div >
                     <section class="row clearfix" id="post-container" *ngFor="let post of posts">
@@ -28,32 +28,37 @@
                 </div>
             </div>
         </article>
-        <aside class="col-lg-3 col-12" id="rated-posts">
+        <div class="col-lg-4 col-12" id="rated-posts">
+            <h5 class="text-muted text-center">Top Rated</h5>
             <hr>
-            <h3 class="text-muted">Top Rated</h3>
+            <br>
             <div *ngIf="ratedPosts">
-                <div class="row justify-content-center" *ngFor="let ratedPost of ratedPosts" id="rated-post-container">
-                    <div class="col-lg-6 col-md-4 col-xs-5 col-6">
-                        <img src="{{ratedPost.post_imgurl}}" class="img-fluid" id="rated-post-image">
-                    </div>
-                    <div class="col-lg-6 col-md-4 col-xs-5 col-6" id="rated-post-text">
-                        <p>{{ratedPost.post_highlight}}</p>
-                        <p class="text-muted">{{ratedPost.post_type}}</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-11 col-md-5 col-xs-6 col-11" *ngFor="let ratedPost of ratedPosts" id="rated-post-container">
+                        <div class="row">
+                            <div class="col-6" id="rated-post-image">
+                                <img src="{{ratedPost.post_imgurl}}" class="img-fluid">
+                            </div>
+                            <div class="col-6" id="rated-post-text">
+                                <p>{{ratedPost.post_title}}</p>
+                                <p class="text-muted">{{ratedPost.post_type}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </aside>
+        </div>
     </div>
-    <div class="container">
+    <div class="container" id="subscribe">
         <div class="row">
-        <div class="col-lg-8 col-md-10 col-12">
-            <div>
-                <h3>Subscribe</h3>
-                <p>Subscribe to our beautiful newsletter that is soaking  with designer stories, latest project tales and more.</p>
+        <div class="col-lg-8 col-md-10 col-12" id="subscribe-container">
+            <div id="subscribe-header">
+                <h3 class="col-lg-8 col-md-10 col-12">Subscribe</h3>
+                <p class="col-lg-8 col-md-10 col-12">Subscribe to our beautiful newsletter that is soaking  with designer stories, latest project tales and more.</p>
             </div>
-            <div>
+            <div id="subscribe-footer">
                 <input>
-                <button></button>
+                <button>Submit</button>
             </div>
         </div>
         </div>
