@@ -1,0 +1,13 @@
+<article class="row justify-content-center">
+    <div class="col-lg-10 col-md-11 col-12" *ngIf="post">
+        <br><br>
+        <h3>{{post.post_title}}</h3>
+        <p class="text-muted">POSTED BY {{post.post_author}} | {{post.post_date}} | {{post.post_about}}</p>
+        <br>
+        <img src="{{post.post_imgurl}}" class="img-fluid">
+        <br><br><br>
+        <h4 class="text-muted">{{post.post_highlight}}</h4>
+        <div [innerHTML]="post.post_content"></div>
+    </div>
+    <div></div>
+</article>

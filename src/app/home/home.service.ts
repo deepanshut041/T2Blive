@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 export class HomeService {
   blogs:FirebaseListObservable<any[]>;
   categories:FirebaseListObservable<any[]>;
+  blog:FirebaseObjectObservable<any>
   constructor(private af:AngularFireDatabase,private afAuth: AngularFireAuth, private router:Router) {
     this.blogs = af.list('/blogs');
     this.categories = af.list('/bCategory');
@@ -20,6 +21,10 @@ export class HomeService {
 
   getCategories(){
     return this.categories as FirebaseListObservable<any[]>;
+  }
+
+  getBlog(id:String){
+    return this.af.object('/blogs/'+id) as FirebaseObjectObservable<any>;
   }
 
 }
