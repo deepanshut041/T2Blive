@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from "../home.service";
+import { Router } from "@angular/router";
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-blog',
@@ -7,8 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BlogComponent implements OnInit {
-  ngOnInit() {
 
+  constructor() {
+
+  }
+  ngOnInit() {
   }
 
   

@@ -50,15 +50,19 @@ export class NewBlogComponent implements OnInit {
     };
     reader.readAsDataURL(event.target.files[0]);
   }
-  newBlog(title, content,category,videoUrl) {
+  newBlog(title,author,about,highlight,content,category,videoUrl) {
+  let date = (new Date()).toString().split(' ').splice(1,3).join(' ');
 	this.errBlog=null;
   let newPost = {
     post_type: category,
     post_title: title,
+    post_about:about,
+    post_highlight:highlight,
     post_content: content,
-    post_author: this.admin_email,
+    post_author: author,
     post_authorId: this.admin_id,
-    post_videoUrl:null
+    post_videoUrl:null,
+    post_date: date
   }
   document.getElementById("blog-form").style.display = "none";
   document.getElementById("spinner").style.display = "block";

@@ -1,6 +1,8 @@
 // Angular Imports
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AngularFireAuthModule } from "angularfire2/auth";
+import { AngularFireDatabaseModule } from "angularfire2/database";
 
 // Home Module imports
 import { HomeRoutingModule } from './home-routing.module';
@@ -15,8 +17,11 @@ import { FooterComponent } from './footer/footer.component';
 import { ListBlogComponent } from "./blog/listBlog/listBlog.component";
 import { DetailBlogComponent } from "./blog/detailBlog/detailBlog.component";
 
+//Importing servicess
+import { HomeService } from "./home.service";
+
 @NgModule({
-    imports: [CommonModule, HomeRoutingModule],
+    imports: [CommonModule, HomeRoutingModule, AngularFireAuthModule, AngularFireDatabaseModule],
     declarations: [
         HomeComponent, StoreComponent, BlogComponent,
         NavbarComponent, FooterComponent, ScreenComponent,
@@ -24,7 +29,8 @@ import { DetailBlogComponent } from "./blog/detailBlog/detailBlog.component";
     ],
     exports: [
         HomeComponent,
-    ]
+    ],
+    providers:[HomeService]
 })
 export class HomeModule {
 

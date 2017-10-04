@@ -1,0 +1,62 @@
+<div id="blogs-container" class="fluid-container">
+    <div class="container" *ngIf="categories" >
+        <div class="row justify-content-center" >
+            <span class="category-button" *ngFor="let category of categories">{{category.category_name}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <article role="main" class="col-lg-9 col-12" id="posts">
+            <div *ngIf="posts">
+                <div >
+                    <section class="row clearfix" id="post-container" *ngFor="let post of posts">
+                        <div class="col-md-6 col-12" id="post-container-image">
+                            <div class="type">{{post.post_type}}</div>
+                            <img src="{{post.post_imgurl}}" class="post-image">
+                        </div>
+                        <div class="col-md-6 col-12" id="post-container-text">
+                            <div class="accessories clearfix" id="post-container-text-header">
+                                <div class="text-block with">With</div>
+                                <div class="text-block">{{post.post_author}}</div>
+                                <div class="catagory text-block">{{post.post_about}}</div>
+                                <div class="before catagory text-block">About</div>
+                                <div class="hr"></div>
+                            </div>
+                            <h1 class="heading">{{post.post_title}}</h1>
+                            <p class="paragraph-2">{{post.post_highlight}}</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
+        <aside class="col-lg-3 col-12" id="rated-posts">
+            <hr>
+            <h3 class="text-muted">Top Rated</h3>
+            <div *ngIf="ratedPosts">
+                <div class="row justify-content-center" *ngFor="let ratedPost of ratedPosts" id="rated-post-container">
+                    <div class="col-lg-6 col-md-4 col-xs-5 col-6">
+                        <img src="{{ratedPost.post_imgurl}}" class="img-fluid" id="rated-post-image">
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-xs-5 col-6" id="rated-post-text">
+                        <p>{{ratedPost.post_highlight}}</p>
+                        <p class="text-muted">{{ratedPost.post_type}}</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-8 col-md-10 col-12">
+            <div>
+                <h3>Subscribe</h3>
+                <p>Subscribe to our beautiful newsletter that is soaking  with designer stories, latest project tales and more.</p>
+            </div>
+            <div>
+                <input>
+                <button></button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+</div>
