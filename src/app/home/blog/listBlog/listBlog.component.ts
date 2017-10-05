@@ -23,5 +23,9 @@ export class ListBlogComponent implements OnInit {
       });
 
     }
+
+    openDetail(id:String){
+      this.router.navigate(['blog','detail',id]);
+    }
   
 }

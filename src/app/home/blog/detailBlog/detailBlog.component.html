@@ -1,5 +1,5 @@
 <article class="row justify-content-center">
-    <div class="col-lg-10 col-md-11 col-12" *ngIf="post">
+    <div class="col-lg-8 col-md-10 col-12" *ngIf="post">
         <br><br>
         <h3>{{post.post_title}}</h3>
         <p class="text-muted">POSTED BY {{post.post_author}} | {{post.post_date}} | {{post.post_about}}</p>
@@ -9,5 +9,27 @@
         <h4 class="text-muted">{{post.post_highlight}}</h4>
         <div [innerHTML]="post.post_content"></div>
     </div>
-    <div></div>
+    <br>
+    <div>
+        <br><br>
+        <h4 class="text-muted">Comment</h4>
+        <hr>
+        <form class="row">
+            <div class="form-group col-11">
+                <label for="blogTitle">Email</label>
+                <input type="text" class="form-control" #title>
+            </div>
+            <div class="form-group col-11">
+                <label for="blogTitle">Full Name</label>
+                <input type="text" class="form-control" #title>
+            </div>
+            <div class="form-group col-11">
+                <label for="blogTitle">Comment</label>
+                <input type="text" class="form-control" #title>
+            </div>
+            <div class="text-center col-11">
+                <button class="btn btn-warning">Submit</button>
+            </div>
+        </form>
+    </div>
 </article>

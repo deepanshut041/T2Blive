@@ -6,14 +6,10 @@
             <section class="col-lg-8 col-md-7 col-12" id="header-left"> 
                     <div class="type-wrap">
                         <h2>Growing a need for non-traditional<br></h2>
-                        <div id="typed-strings">
-                            <p>Learning</p>
-                            <p>Prototyping</p>
-                            <p>Education</p>
-                            <p>Thinking</p>
-                            <p>Creation</p>
+                        <div id="typed-strings" >
                         </div>
-                        <span id="typed"></span>
+                        <span id="typing"></span>
+
                         <div class="bold-underline"></div>
                         <p id="heading-para">The traditional teaching approaches are generally teacher-directed and follow cookbook 
                                 steps of activities and demonstrations. This approach may not provide students with 
@@ -323,8 +319,8 @@
                 <p class="text-muted">We are friendly and avaliable to chat. Reach out to us anytime and we'll hapily answer your question</p>
                 <h3>WE'RE HERE TO HELP!</h3>
                 <div>
-                    <button>REQUEST A DEMO</button>
-                    <button>FEEDBACK</button>
+                    <button data-toggle="modal" data-target="#request">REQUEST A DEMO</button>
+                    <button data-toggle="modal" data-target="#feedback">FEEDBACK</button>
                 </div>
                 <p>Our Customer Services provides support and guidence for any query regarding this Organisation.
                         They also provide assistance in your learning phase of Robotics wheather your are a school student or college student.</p>
@@ -339,6 +335,158 @@
         </section>
    </div>
 </article>
+
+<!-- Request modal    -->
+<div class="modal fade" id="request" tabindex="-1" role="dialog" aria-labelledby="request" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body" id="modal-style">
+                <h2>Request a Demo</h2>
+                <h3>Take a Tour in your Schools or Locality for this Fun Learning Experience</h3>
+                <p>Fill out the following form and we will set you up with a free demo of Think2uilt Demonstration. We are convinced
+                    that you will quickly see yourself all of benifits your organisation will gain from our competitive information
+                    tools.</p>
+                <!--Form Starts-->
+                <form class="form-horizontal">
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="name" class="form-control" id="name" placeholder="Enter Full Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="company" class="form-control" id="company" placeholder="Enter Conpany Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="add1" class="form-control" id="add1" placeholder="Enter Address Line 1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="add2" class="form-control" id="add2" placeholder="Enter Address Line 2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="city" class="form-control" id="city" placeholder="Select City">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="state" class="form-control" id="state" placeholder="Select State">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="postal" class="form-control" id="postal" placeholder="Enter Postal Code">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="mobile" class="form-control" id="mobile" placeholder="Enter Mobile Number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox"> I opt in to to receive email / text message from think2built.</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#e2e2e2;">Cancel</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#ffc500;">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- FeedBack Modal -->
+<div class="modal fade" id="feedback" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body" id="modal-style">
+
+                <h2>Feedback Form</h2>
+                <h3>Thank you for being a part in this journey in making Education generous.</h3>
+                <p>Your Feedback helps us to understand what we do well and where we can improve. </p>
+
+
+                <!--Form Starts-->
+                <form class="form-horizontal" action="index.php" method="post">
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="name" class="form-control" id="name" placeholder="Enter Full Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <p style="padding:0px;">Please Describe your Experience</p>
+                            <label class="radio-inline">
+                            <input type="radio" name="optradio">Excellent
+                            </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="optradio">Good
+                            </label>
+                            <label class="radio-inline">
+                            <input type="radio" name="optradio">Neutral
+                            </label>	
+                            <label class="radio-inline">
+                            <input type="radio" name="optradio">Poor
+                            </label>	
+                            <label class="radio-inline">
+                            <input type="radio" name="optradio">Very Poor
+                            </label>	
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea class="form-control" rows="3" id="comment" placeholder="Additional Comment" style="width:100% !important;"></textarea>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#e2e2e2;">Cancel</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#ffc500;">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <article class="container">
 
 </article>

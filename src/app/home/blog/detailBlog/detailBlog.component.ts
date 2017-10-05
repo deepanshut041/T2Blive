@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HomeService } from "../../home.service";
-import { Router } from "@angular/router";
+import { RouterModule, Routes,Router,ActivatedRoute }    from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 
 
@@ -16,8 +16,12 @@ export class DetailBlogComponent implements OnInit {
   
   post:any;
   
-  constructor(private _homeService: HomeService, private router: Router,public sanitizer: DomSanitizer) {
-
+  constructor(private _homeService: HomeService, private routes: ActivatedRoute,
+    private router: Router,public sanitizer: DomSanitizer) {
+      routes.params.subscribe((param)=>{
+        this.id=param['id']
+        console.log(this.id);
+      })
   }
   ngOnInit() {
     this._homeService.getBlog(this.id).subscribe((blog)=>{

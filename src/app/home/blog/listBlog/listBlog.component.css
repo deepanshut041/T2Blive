@@ -26,7 +26,8 @@
 
 #posts #post-container:hover{
     box-shadow:15px 38px 36px -2px hsla(0, 0%, 70%, .14);
-    transform: translateY(-30px)
+    transform: translateY(-30px);
+    cursor: pointer;
 }
 
 #posts #post-container #post-container-text{
@@ -124,4 +125,47 @@
     color: #575757;
     font-size: 11px;
     line-height: 18px;
+}
+
+#subscribe{
+    padding-top: 20px;
+}
+
+#subscribe #subscribe-container{
+    border: 1px solid #eee;
+    border-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 0px;
+}
+
+#subscribe #subscribe-header{
+    padding: 30px 10px;
+}
+#subscribe #subscribe-footer{
+    padding: 30px 10px;
+    background-color: #f6481c; 
+}
+
+#subscribe #subscribe-footer input{
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-right: 0px;
+    border: 1px solid #eee;
+    border-right: transparent;
+}
+
+#subscribe #subscribe-footer button{
+    padding: 10px 20px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0px;
+    margin-left: -5px;
+    background-color: white;
+    border: 1px solid #eee;
+}
+
+#subscribe #subscribe-footer button:hover{
+    color: #f6481c;
 }
