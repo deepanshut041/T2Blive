@@ -1,12 +1,26 @@
 nav{
     background-color: #ffc600 !important;
-    color: #333;
+    color: #fff;
 }
 .navbar-brand{
-    color: #333;
+    color: #fff;
     font-weight: 900;
 }
 .nav-item{
-    color: #333;
+    color: #fff;
     font-weight: 500;
+}
+.navbar-toggler{
+    color: white;
+}
+.fa{
+    color: white;
+}
+
+.nav-item:hover{
+    border: 0px solid transparent;
+    border-bottom:1px solid white;
+}
+.img-fluid{
+    height: 30px;
 }
